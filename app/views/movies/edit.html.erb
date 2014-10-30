@@ -1,0 +1,31 @@
+<h1>Editing <%= @movie.title %></h1>
+<!-- The below was commented out and a Partials under views
+/movies _form.html.erb -->
+<%= render 'form' %>
+
+<!-- <%= form_for(@movie) do |f| %>
+<p>
+	<%= f. label :title %><br>
+	<%= f. text_field :title, autofocus: true %>
+</p>
+<p>
+	<%= f.label :variety %><br>
+	<%= f.text_field :variety %>
+</p>
+<p>
+	<%= f.label :rating %><br>
+	<%= f.text_field :rating %>
+</p>
+<p>
+	<%= f.label :total_gross %><br>
+	<%= f.number_field :total_gross %>
+</p>
+<p>
+	<%= f.label :released_on %><br>
+	<%= f.datetime_select :released_on %>
+</p>
+<p>
+	<%= f.submit %>
+	<%= link_to "Cancel", movies_path %>
+</p>
+<% end -%> -->

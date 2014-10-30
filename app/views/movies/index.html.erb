@@ -1,0 +1,69 @@
+<body>
+<div class="large-4 columns">.</div>
+<div class="large-4 columns">
+
+<h1><%= pluralize(@movies.size, 'Movie') %> Top in the Area!</h1>
+<!-- The below link was move to the application.html.erb page -->
+<!-- <%= link_to "Add New Movie", new_movie_path %> -->
+<!-- here I can use this (<%= @movies %>) this is rails instance variable that will grab the arry from the controller it is the erb tags (<%= %>, <% %>) it should look like this -->
+<!-- Below is the code done with a html5 format to givee it
+better structure -->
+<% @movies.each do |movie| %>
+  <article class="movie">
+    <header>
+    <%= image_tag(movie.image_file_name) %>
+      <h2><%= link_to movie.title, movie %></h2>
+      <h3><%= pluralize(movie.capacity, 'spot') %></h3>
+    </header>
+    <p>
+      <h3><%= movie.variety %></h3>
+    </p>
+    <table>
+      <tr>
+        <th>Released:</th>
+        <td><%= movie.released_on.to_s(:long) %></td>
+      </tr>
+      <tr>
+        <th>Rating:</th>
+        <td><%= movie.rating %></td>
+      </tr>
+      <tr>
+        <th>Total Gross:</th>
+        <td><%= number_to_currency(movie.total_gross) %></td>
+      </tr>
+    </table>
+  </article>
+<% end %>
+</div>
+<div class="large-4 columns">.</div>
+</body>
+<!-- <ul>
+
+<% @movies.each do |movie| %>
+   
+     <h2><%= movie.title %></h2>
+
+	     <h3><%= movie.variety %></h3>
+	 
+        <h3>Rating</h3><%= movie.rating %>
+     <h3>Gross</h3><%= number_to_currency(movie.total_gross) %>
+     <h3>When</h3>
+     <p>
+     <%= movie.released_on %>
+     </p>
+
+  
+   <% end %> 
+
+</ul>    -->   
+<!-- <ul> 
+
+<li>The Equalizer</li>
+<li>The Judge</li>
+<li>The Book Of Life</li>
+<li>John Wick</li>
+<li>Gone Girl</li>
+<li>Dracula Untold</li>
+<li>Fury</li>
+	
+</ul> -->

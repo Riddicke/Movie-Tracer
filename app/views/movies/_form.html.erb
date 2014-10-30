@@ -1,0 +1,35 @@
+<p> @response </p>
+<%= form_for(@movie) do |f| %>
+ <%= @movie.errors.full_messages.to_sentence %>
+<p>
+	<%= f. label :title %><br>
+	<%= f. text_field :title, autofocus: true %>
+</p>
+<p>
+	<%= f.label :variety %><br>
+	<%= f.text_field :variety %>
+</p>
+<p>
+	<%= f.label :rating %><br>
+	<%= f.text_field :rating %>
+</p>
+<p>
+	<%= f.label :total_gross %><br>
+	<%= f.number_field :total_gross %>
+</p>
+<p>
+	<%= f.label :released_on %><br>
+	<%= f.datetime_select :released_on %>
+</p>
+    <%= f.label :image_file_name %><br/>
+    <%= f.text_field :image_file_name, size: 30,
+         placeholder: "GIF, JPG, or PNG file name" %>
+<p>
+<p>
+	<%= f.label :capacity %><br/>
+	<%= f.number_field :capacity %>
+</p>
+	<%= f.submit %>
+	<%= link_to "Cancel", movies_path %>
+</p>
+<% end -%>

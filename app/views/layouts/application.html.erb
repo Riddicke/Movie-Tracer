@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MovieTracker</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+
+
+
+<header id="page-header">
+	<h1>The Movie Tracker</h1>
+
+</header>
+   <aside id="sidebar">
+	<nav>
+		<ul>
+			<li><%= link_to "All Movies", movies_path %></li>
+			<li><%= link_to "Add New Movie", new_movie_path %></li>
+		</ul>
+	</nav>
+</aside>	
+
+<%= yield %>
+
+<footer id="page-footer">
+	<p>
+		Copyright &copy; 2014 The Ultimate Design
+	</p>
+</footer>
+
+</body>
+</html>

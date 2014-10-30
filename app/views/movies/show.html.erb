@@ -1,0 +1,38 @@
+<!-- <h1><%= @movie.title %></h1> -->
+<article>
+    <header>
+      <%= image_for(@movie) %>
+      <h1><%= @movie.title %></h1>
+    </header>
+    <p>
+      <h3><%= @movie.variety %></h3>
+    </p>
+    <table>
+      <tr>
+        <th>Released:</th>
+        <td><%= @movie.released_on.to_s(:long) %></td>
+      </tr>
+      <tr>
+        <th>Rating:</th>
+        <td><%= @movie.rating %></td>
+      </tr>
+      <tr>
+        <th>Total Gross:</th>
+        <td><%= number_to_currency(@movie.total_gross) %></td>
+      </tr>
+    </table>
+    <h3>Capacity</h3>
+    <p>
+    	<%= pluralize(@movie.capacity, 'spot') %>
+    </p>
+    <%= link_to "Who's Review?", movie_reviews_path(@movie) %><br>
+    <%= link_to "Write Review!", new_movie_review_path(@movie), 
+           class: "button ok review" %>
+  </article>
+
+<!-- instead of using this<a href="/movies">All Movies</a>
+used what below -->
+<!-- this link move to the application page<%= link_to "All Movies", movies_path %> | -->
+<%= link_to "Edit", edit_movie_path(@movie) %>
+<%= link_to "Delete", movie_path(@movie), method: :delete, 
+     data: {confirm: 'Are you sure?'} %>

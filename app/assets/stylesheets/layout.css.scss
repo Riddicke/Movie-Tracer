@@ -1,0 +1,22 @@
+header#page-header {
+	color: #7FFFD4;
+	background-color: #708090;
+	padding: 10px;
+
+	h1 {
+		text-align: center;
+		text-transform: uppercase;
+	}
+}
+
+footer#page-footer {
+	color: #708090;
+	background-color: #7FFFD4;
+	padding: 10px
+}
+
+aside#sidebar {
+	float: right;
+	background-color: #808080;
+	width: 180px;
+}
